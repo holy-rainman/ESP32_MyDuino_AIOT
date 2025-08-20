@@ -4,20 +4,20 @@
 #include <ESP_Google_Sheet_Client.h>
 #include <GS_SDHelper.h>
 
-#define WIFI_SSID "aim"
-#define WIFI_PASSWORD "123456abc"
+#define WIFI_SSID "YOUR_SSID"
+#define WIFI_PASSWORD "YOUR_PW"
 
 // Google Project ID
-#define PROJECT_ID "aimtestuthm"
+#define PROJECT_ID "YOUR_PROJECT_ID"
 
 // Service Account's client email
-#define CLIENT_EMAIL "aimtestuthm@aimtestuthm.iam.gserviceaccount.com"
+#define CLIENT_EMAIL "YOUR_CLIENT_EMAIL"
 
 // Service Account's private key
-const char PRIVATE_KEY[] PROGMEM = "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCZZZFPY+A98g9X\n6fwR8o9IU/FGy8WGgzgYiVbxBNwg0jxDBeUXGzJOy5PMJAnXgcEINDUdsICf/yG7\nezHFMXHHCCo8hwBuyDrpqYW5c+VdFD/uu4YF7aFnCNZaj31fqxNYmNIB2e2eUM0h\nST8RfJYj2JJ6tXVbXm2YZPumOjhptl5R32F7sc0LBmA66wfRvWW35nYzzTywWOzJ\njTJHitDgFREqBq3IuYT+1+aqJoNo7eIqemsMSBUVujVUCtScTkjLHzrD75YwOBbb\nDtCHGafbKAGknbPt+Oq/qzINxQte1FAVtPKb0H4ME+xN+GqmsglPljD7yqDpy3jE\n1T23b3WLAgMBAAECggEABwWXOUMhKLTD7wpO96Na27y79rmtORMYpkbjK/VE/luh\nVpAWhJBCJUk8YsPjj3HpHC8Hn2xM9wX+zU4+YQB6bNn61Pp5Epkn2TphXLPpc/FR\nW+RJpkvSb5z/8vVOj+qM4Cles6b+MZkRSszHjk1dshZf3i4gSSZxbeBxhJJ1sqEM\nTvK9zd95Eyjr7wb4T+ehndiD3fB3CbHMAL0cSgRdNQo1BXi06g09KDB/u69hrX9V\nkkd2EwfiTZJlRkeiqpwCgdUVWlJ+eu2wHX3MD6DeBJSTNCZh0bDoT6/OcabIFnAq\nXGZJF65vNH29XTXA/692dACYHWd1OoavUpSfyQfPwQKBgQDVcK/gH3xAcMEYzN3b\nXsQSdYJHFHjtvCTSR7XdeGon0QDQ3wbJ6EZrjU/vtEUgm3lPQ4Vt4HHpTxmqrncl\npCfoTRWKr+G0s0oalD73OlrGOXWtVfqc04MkBumt9vGmLw7XI4G+tCKyXS6QJWyw\n+nYnk5xibTw5avOGNBYnNZSmlwKBgQC3++QBpitmJgwDKucAK/s+T9zesxksouUc\nVrz1/i0Du9gAJlRWVFG3W+LEFgqSLEJ6MEFq3i/T7dIiJCJHsfK9hOZCOD+loh7g\nstn00346mJnFkWcwWxSqroGBO+0wLQTkavoSoLjQNlMcay5aUWZdrxYgpc2q6QFu\ns+iHWO3bLQKBgB5Jw2t2jFdIqN4wFDuRExnbewVDLnXuAPumGXS4JbhIvGjnfTsh\nrvyMLQ/C8RxTc79/wWt6Mi/9fZLu9xFsXg1lAu2PT+QonRdweg7zRPZkKQLT9KBU\nk4OFR5vcMyZ1/xEghMTfIx1Ug8sIxIfIwwOSutpszeMH/k7JDWu6+sE5AoGBAI5w\nMxubvGm+9vnU0zZs1nxtc//uBIVsL5h7BpwkBlGnshiblBup+AHO34cT0WdNYMIc\nbekAz2Jx8oeAFhIPkHBtXZ7S0WO4WdN4ZAmJW2aeEh7E7XCgcyWZKKYW8RClKe51\na9nUGIEKLdoImMBP2MKa9LSd6NZywiskmdd/X9aZAoGBAM9M61FVUAOQ+nr44EqO\nRXkUX0iyYgNbjMsIXl+FDCeBGvZ1qTzEyBS1dCJWXhxnKrhCi1Ulq81kEh+zHpEM\nAvzwKUiYng2MzDNIGDYCm7PJYA3ol7T7Rgwl2CUTGh7gj8NbsM4GLpGbENGXoTSQ\nES/NB11SvXbfOeEWTS7IxhFn\n-----END PRIVATE KEY-----\n";
+const char PRIVATE_KEY[] PROGMEM = "-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_hFn\n-----END PRIVATE KEY-----\n";
 
 // Spreadsheet ID
-const char spreadsheetId[] = "15wNl1btFKPTCAC1uRqb7UW5OrpHMW9LHgDEeQACYDXI";
+const char spreadsheetId[] = "YOUR_SHEET ID";
 
 // Timer
 unsigned long lastTime = 0;
