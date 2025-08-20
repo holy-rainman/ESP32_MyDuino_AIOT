@@ -8,8 +8,8 @@
 #include <BlynkSimpleEsp32.h>
 
 BlynkTimer timer;
-char ssid[] = "aim";
-char pass[] = "123456abc";
+char ssid[] = "YOUR_SSID";
+char pass[] = "YOUR_PW";
 
 //====================================== DHT11
 #include "DHTesp.h"
