@@ -94,8 +94,13 @@ void setup() {
   Serial.println();
 
   // Malaysia timezone UTC+8
-  configTzTime("CST-8", "pool.ntp.org", "time.nist.gov");
+  configTzTime("MYT-8", "pool.ntp.org", "time.nist.gov");
   GSheet.printf("ESP Google Sheet Client v%s\n\n", ESP_GOOGLE_SHEET_CLIENT_VERSION);
+
+  time_t now = time(nullptr);
+  now += 8 * 3600; // tambah 8 jam
+  struct tm timeinfo;
+  localtime_r(&now, &timeinfo);
 
   WiFi.setAutoReconnect(true);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -132,7 +137,7 @@ void loop() {
     getDHT11();
 
     // Timestamp Malaysia time
-    struct tm timeinfo;
+    struct tm  timeinfo;
     if (getLocalTime(&timeinfo)) {
       char timeString[25];
       strftime(timeString, sizeof(timeString), "%Y-%m-%d %H:%M:%S", &timeinfo);
@@ -169,3 +174,7 @@ void tokenStatusCallback(TokenInfo info) {
       GSheet.getTokenStatus(info).c_str());
   }
 }
+
+
+
+
