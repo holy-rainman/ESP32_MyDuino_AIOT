@@ -100,10 +100,14 @@ void setup() {
   configTzTime("MYT-8", "pool.ntp.org", "time.nist.gov");
   GSheet.printf("ESP Google Sheet Client v%s\n\n", ESP_GOOGLE_SHEET_CLIENT_VERSION);
 
-  time_t now = time(nullptr);
-  now += 8 * 3600; // tambah 8 jam
+  // TUNGGU NTP SYNC SIAP
   struct tm timeinfo;
-  localtime_r(&now, &timeinfo);
+  while (!getLocalTime(&timeinfo)) {
+    Serial.println("Waiting for NTP...");
+    delay(1000);
+  }
+  Serial.println(&timeinfo, "Local time (MYT): %Y-%m-%d %H:%M:%S");
+
   
   Serial.print("Connecting to Wi-Fi");
   while (WiFi.status() != WL_CONNECTED) {
