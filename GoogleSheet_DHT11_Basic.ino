@@ -93,6 +93,9 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
 
+  WiFi.setAutoReconnect(true);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+
   // Malaysia timezone UTC+8
   configTzTime("MYT-8", "pool.ntp.org", "time.nist.gov");
   GSheet.printf("ESP Google Sheet Client v%s\n\n", ESP_GOOGLE_SHEET_CLIENT_VERSION);
@@ -101,9 +104,6 @@ void setup() {
   now += 8 * 3600; // tambah 8 jam
   struct tm timeinfo;
   localtime_r(&now, &timeinfo);
-
-  WiFi.setAutoReconnect(true);
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   
   Serial.print("Connecting to Wi-Fi");
   while (WiFi.status() != WL_CONNECTED) {
