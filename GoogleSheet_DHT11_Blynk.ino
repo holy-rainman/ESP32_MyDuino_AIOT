@@ -146,10 +146,6 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
 
-  // Malaysia UTC+8
-  configTzTime("CST-8", "pool.ntp.org", "time.nist.gov");
-  GSheet.printf("ESP Google Sheet Client v%s\n\n", ESP_GOOGLE_SHEET_CLIENT_VERSION);
-
   WiFi.setAutoReconnect(true);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   
@@ -165,6 +161,18 @@ void setup() {
 
   // Blynk init
   Blynk.begin(BLYNK_AUTH_TOKEN, WIFI_SSID, WIFI_PASSWORD);
+
+  // Malaysia timezone UTC+8
+  configTzTime("MYT-8", "pool.ntp.org", "time.nist.gov");
+  GSheet.printf("ESP Google Sheet Client v%s\n\n", ESP_GOOGLE_SHEET_CLIENT_VERSION);
+
+  // TUNGGU NTP SYNC SIAP
+  struct tm timeinfo;
+  while (!getLocalTime(&timeinfo)) {
+    Serial.println("Waiting for NTP...");
+    delay(1000);
+  }
+  Serial.println(&timeinfo, "Local time (MYT): %Y-%m-%d %H:%M:%S");
 
   pinMode(ledM, OUTPUT);     
   pinMode(ledK, OUTPUT);     
