@@ -21,6 +21,5 @@ void loop()
   digitalWrite(ledM,LOW); digitalWrite(ledH,HIGH); delay(5000);
   kelip(ledH,5,200);
   digitalWrite(ledH,LOW); digitalWrite(ledK,HIGH); delay(2000);
-  kelip(ledK,5,200);
 }
 
