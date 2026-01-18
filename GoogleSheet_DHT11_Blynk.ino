@@ -24,9 +24,9 @@ unsigned long timerDelay = 5000;
 
 //====================================== BLYNK
 #define BLYNK_PRINT Serial
-#define BLYNK_TEMPLATE_ID   "TMPL6g1PgR2RA"
-#define BLYNK_TEMPLATE_NAME "test"
-#define BLYNK_AUTH_TOKEN    "GC4E4o24JJcR6shnmoJbWIuUluQKSPiX"
+#define BLYNK_TEMPLATE_ID   "YOUR_TEMPLATE_ID"
+#define BLYNK_TEMPLATE_NAME "YOUR_TEMPLATE_NAME"
+#define BLYNK_AUTH_TOKEN    "YOUR_AUTH_TOKEN"
 
 #include <WiFiClient.h>
 #include <BlynkSimpleEsp32.h>
