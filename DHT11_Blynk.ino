@@ -146,8 +146,8 @@ bool getTemperature()
   Serial.print("  Humidity:");
   Serial.println(humidity);
 
-  Blynk.virtualWrite(V3,temperature);
-  Blynk.virtualWrite(V4,humidity);
+  Blynk.virtualWrite(V4,temperature);
+  Blynk.virtualWrite(V5,humidity);
   
 	return true;
 }
