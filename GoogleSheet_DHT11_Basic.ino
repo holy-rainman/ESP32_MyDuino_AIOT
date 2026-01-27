@@ -17,7 +17,7 @@
 const char PRIVATE_KEY[] PROGMEM = "-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_hFn\n-----END PRIVATE KEY-----\n";
 
 // Spreadsheet ID
-const char spreadsheetId[] = "YOUR_SHEET ID";
+const char spreadsheetId[] = "YOUR_SHEET_ID";
 
 // Timer
 unsigned long lastTime = 0;
